@@ -1,0 +1,14 @@
+**/node_modules
+**/.venv
+**/venv
+**/__pycache__
+**/*.pyc
+**/.env
+**/.env.*
+**/*.zip
+**/.git
+.openai
+.sites-runtime
+backend/data
+dist
+frontend/public/pdf-assets

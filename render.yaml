@@ -1,0 +1,28 @@
+# One free web service. No paid disks, databases, or background services.
+services:
+  - type: web
+    name: autoprint-ai-demo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: DEMO_MODE
+        value: "true"
+      - key: PRINT_MODE
+        value: simulation
+      - key: ALLOW_TEST_PRINTING
+        value: "false"
+      - key: DATA_DIR
+        value: /tmp/autoprint
